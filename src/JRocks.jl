@@ -1,5 +1,3 @@
-include("JGrids.jl")
-
 function randomWalk(number, range, len, smoothness)
     result = []
     rangeVector = collect(-range/2:range/smoothness:range/2)

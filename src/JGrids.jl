@@ -4,7 +4,7 @@ Definitions of grids in 1, 2 and 3 dimensions
 
 =#
 
-struct Cells
+mutable struct Cells
     numberOf::Int64
     facePos::Array{Int64}
     index::Array{Int64}
@@ -13,7 +13,7 @@ struct Cells
     centers::Array{Float64}
 end
 
-struct Faces
+mutable struct Faces
     numberOf::Int64
     nodePos::Array{Int64}
     neighbors::Array{Int64}
@@ -24,12 +24,12 @@ struct Faces
     centers::Array{Float64}
 end
 
-struct Nodes
+mutable struct Nodes
     numberOf::Int64
     coords::Array{Float64}
 end
 
-struct Geometry
+mutable struct Geometry
     cells::Cells
     faces::Faces
     nodes::Nodes
