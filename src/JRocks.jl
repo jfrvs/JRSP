@@ -18,9 +18,9 @@ mutable struct Rock
         poro = ones(geometry.cells.numberOf, 1)*porosity
         new(perm, poro)
     end
-    function Rock(geometry::Geometry, permeability::Array, porosity::Number, porosityRange::Number)
+    function Rock(geometry::Geometry, permeability::Array, porosity::Number; porosityRange::Number, porosityIncrement::Number)
         perm = ones(geometry.cells.numberOf, 1)*permeability*9.869233e-13
-        poro = ones(geometry.cells.numberOf, 1)*porosity
+        poro = rand((porosity - porosityRange):(porosityIncrement):(porosity + porosityRange), geometry.cells.numberOf, 1)*porosity
         new(perm, poro)
     end
 end
