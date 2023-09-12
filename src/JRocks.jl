@@ -22,7 +22,7 @@ mutable struct Rock
         perm = ones(geometry.cells.numberOf, 1)*permeability*9.869233e-13
         range = (porosity - porosityRange):(porosityIncrement):(porosity + porosityRange)
         println(range)
-        poro = rand(range, geometry.cells.numberOf, 1)*porosity
+        poro = rand(range, geometry.cells.numberOf, 1)
         new(perm, poro)
     end
 end
