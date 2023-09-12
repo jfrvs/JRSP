@@ -1,5 +1,6 @@
 module JRSP
 
-greet() = print("Hello World!")
+include("JRocks.jl")
+include("JGrids.jl")
 
 end # module JRSP
