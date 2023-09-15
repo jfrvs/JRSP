@@ -1,5 +1,5 @@
 using Plots
-gr()
+Plots.plotlyjs()
 
 function convertFromVectorTo123D(data::Array, dimensions::Array)
 
@@ -17,4 +17,49 @@ function convertFromVectorTo123D(data::Array, dimensions::Array)
         return reshape(data, dimensions[1], dimensions[2], dimensions[3])
     end
 
+end
+
+function plotGrid(geometry::Geometry)
+    if geometry.griddim == 1
+        return scatter(
+            geometry.cells.centers[:,1],
+            ones(geometry.cells.numberOf,1),
+            xlabel = "Length (m)",
+            grid = false,
+            showaxis = :x,
+            legend = false,
+            markersize = 10,
+            msc=:auto
+            )
+    end
+
+    if geometry.griddim == 2
+        return scatter(
+            geometry.cells.centers[:,1],
+            geometry.cells.centers[:,2],
+            xlabel = "Length (m)",
+            ylabel = "Width (m)",
+            grid = false,
+            showaxis = :xy,
+            legend = false,
+            markersize = 8,
+            msc=:auto
+            )
+    end
+
+    if geometry.griddim == 3
+        return scatter(
+            geometry.cells.centers[:,1],
+            geometry.cells.centers[:,2], 
+            geometry.cells.centers[:,3],
+            xlabel = "Length (m)",
+            ylabel = "Width (m)",
+            zlabel = "Depth (m)",
+            grid = false,
+            showaxis = :xyz,
+            legend = false,
+            markersize = 6,
+            msc=:auto
+            )
+    end
 end
