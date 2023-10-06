@@ -1,6 +1,6 @@
 #=
 
-Definitions of grids in 1, 2 and 3 dimensions
+Definitions of grids in 1, 2 and 3 dimensions.
 
 =#
 
