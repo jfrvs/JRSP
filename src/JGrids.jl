@@ -485,3 +485,22 @@ mutable struct Geometry
         Geometry(xReplicas, yReplicas, zReplicas, Float64(xReplicas), Float64(yReplicas), Float64(zReplicas))
     end
 end
+
+function geometryOverview(geometry::Geometry)
+    @printf "The input geometry has:\n"
+    @printf "%d cells, %d faces, %d nodes:\n" geometry.cells.numberOf geometry.faces.numberOf geometry.nodes.numberOf
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    @printf "The input geometry has:\n"
+    
+
+end
